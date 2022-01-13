@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript">
+    function btn() {
+      var str1 = document.getElementById("rd1");
+      var str2 = document.getElementById("rd2");
+
+
+      if(rd1.checked==true)
+        alert (rd1.value);
+      else if(rd2.checked==true)
+        alert (rd2.value);
+      else
+        alert ("Non Selected");
+    }
+
+  </script>
+</head>
+      <input type="radio" name = "grp1" id="rd1" value="Simple Snippet">Simple Snippet</input> <br>
+
+      <input type="radio" name = "grp1" id="rd2" value="Telusko Learning">Telusko Learning</input> <br>
+      <button onclick="btn()">Click Me</button>
+</body>
+</html>

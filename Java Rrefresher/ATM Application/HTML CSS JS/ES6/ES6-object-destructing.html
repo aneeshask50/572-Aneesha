@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Object Destructuring </title>
+</head>
+
+<script>
+
+    var str = "hello"; // str holds a string literal
+
+    var car1 = {
+        price: 1000,
+        color: "red",
+        weight: 100
+    }; // car1 is an object literal 
+
+    function displayDetails(c) {
+        document.write(
+            `<hr>displayDetails<br> Price is car is ${c.price} and weight is ${c.weight}`);
+    };
+
+    displayDetails(car1);
+
+    function displayDetails2(p, w) {
+        document.write(
+            `<hr>In displayDetails2 <br> Price is car is ${p} and weight is ${w}`);
+    };
+
+
+    displayDetails2(car1.price, car1.weight);
+
+    function displayDetailsES6({ price }) {
+        document.write(
+            `<hr>In displayDetailsES6 <br> Price is car is ${price} `);
+    };
+
+    displayDetailsES6(car1);
+
+    function displayDetailsES62(c) {       
+        var { price:pr } = c; // extract price from car and store in pr
+
+        document.write(
+            `<hr><br>In displayDetailsES62 <br> Price is car is ${pr} `);
+
+        car.weight = 20000000000;
+        var { weight, color } = c; // extract weight and color from object c.
+        document.write(
+            `<br>In displayDetailsES62 <br> Weight is car is ${weight} `);
+    };
+    displayDetailsES62(car1);
+
+
+    //Object destructuring of a built-in object navigator
+    function f({ appCodeName, appVersion }) {
+        document.write(
+            "<hr><br>appCodeName=  " + appCodeName + " and appVersion= " + appVersion);
+    };
+    f(navigator);
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+
+    <body>
+        <header style="font-size: 24pt; color:white; background-color: black; text-align: center;">Object Destructuring
+        </header>
+
+    </body>
+
+</body>
+
+</html>

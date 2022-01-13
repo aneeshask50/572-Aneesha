@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow Functions</title>
+</head>
+<script src="my-js-classes.js"></script>
+
+<script>
+    //Before ES6.
+    function f1() {
+        document.write(`<hr>Inside f1<br>`);
+    }
+
+    f1();
+
+    // Same function above using arrow notations.
+    f2 = () => document.write(`<hr>Inside f2<br>`);
+
+    f2();
+
+    // An arrow function that takes one parameter
+    f3 = (a) => { document.write(`<hr>Inside f3 a is ${a} <br>`); };
+
+    f3(10);
+
+    // An arrow function that takes two parameter
+    f4 = (a, b) => { document.write(`<hr>Inside f4 a,b is ${a},${b}  <br>`); };
+    f4(5, "abc");
+
+    // An arrow function that takes two parameter and returns a value.
+    f5 = (a, b) => a + b; // NoTE: you don't have tell "return" a+b; return can be omitted.
+
+    var val1 = f5(15, 60);
+    document.write(`<hr>addition value from f5 is ${val1} <br>`);
+
+    // An arrow function that takes two parameter, has multiple statements and returns a value.
+    const f6 = (a, b) => {
+        var c = a + b;
+        var d = 2 * c;
+        return d;
+    };
+
+    var val2 = f6(15, 60);
+    document.write(`<hr>addition value from f5 is ${val2} <br>`);
+
+
+    // An arrow function that takes destructured price from any object
+    // passed to it
+    const f7 = ({ price }) => document.write(`<hr>Inside f7 car's price is ${price} <br>`);
+    var car1 = {
+        price: 500,
+        color: "red",
+        weight: 100
+    };
+    f7(car1);
+
+    var bus1 = new Bus(12500,"green");
+    f7(bus1);
+    
+
+    // arrow functions that accepts a function f and applies them on two
+    // variables a and b.
+    f8 = (a,b,f) => f(a,b);
+    var val3  = f8(10,15,f5);
+    document.write(`<hr>addition value from f8 using f5 is ${val3} <br>`);
+
+
+
+</script>
+
+<body>
+    <header style="display:inline;font-size: 24pt; 
+        color:white; background-color: black;
+         text-align: center;">ES6 Arrow Functions
+    </header>
+
+</body>
+
+</html>

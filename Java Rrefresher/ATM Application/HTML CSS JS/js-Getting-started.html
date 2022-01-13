@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<HTMl>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="my-js-classes.js">        
+    </script>
+
+    
+    <script>
+        f(3);
+
+        var answer = 0xFFF;
+        console.log("Value of my answer variable " + answer);
+
+        someVar = "one line\t another line";
+        console.log(someVar);
+
+        myArray = new Array(5); //Array decl 
+        myArray[0] = 100;
+        myArray[1] = 101.12;
+        myArray[2] = false;
+        myArray[3] = "Hello";
+        myArray[4] = "fifth";
+
+        //Observations: Arrays in JS can hold a mix of datatypes.
+        // Array can grow in JS.
+
+        // removes 1 element starting at index 2; Thier is no direct way
+        // to remove a particularly indexed array element.
+        // One alternate way is delete myArray[2]
+        myArray.splice(2, 2);
+        console.log("deleting : " + myArray);
+        console.log("Length after deleting : " + myArray.length);
+
+        myArray2 = [1, 45, true, true, "Hello"];
+        console.log(myArray2);
+
+
+        document.write(myArray2);
+
+        // Flow control statements
+        var var1 = "10";
+        var var2 = 10;
+
+        if (var1 == var2) { //shallow comaprison
+            document.write("<br /> eq message1 ");
+        } else {
+            document.write("<br/> NOT eq message 2");
+        }
+
+        // === does deep comaprison of both datatype and value
+        if (var1 === var2) {
+            document.write("<br /> === eq message1 ");
+        } else {
+            document.write("<br/> === NOT eq message 2");
+        }
+
+        //For demo
+        document.write("<br/> for demo");
+        var n = 0;
+        for (var i = 0; i < 3; i++) {
+            n += i;
+            document.write("&nbsp;" + i);
+        }
+
+        //while demo
+        document.write("<br/>while demo<br/>");
+        var n = 0;
+        var x = 0;
+        do {
+            n++;
+            x += n;
+            document.write("&nbsp;The value of n is " + n + ". The value of x is " + x);
+        } while (n < 3);
+
+        //switch demo
+        document.write("<br/>#######<br/>switch demo<br/>");
+        var day = "FRI";
+        switch (day) {
+            case "MON": document.write("<br/>case 0<br/>"); break;
+            case "FRI": document.write("<br/>case 1<br/>"); break;
+            case "SAT": document.write("<br/>case 2<br/>"); break;
+            default: document.write("<br/>default<br/>");
+        }
+
+        //Functions demo
+        // Function declaration 
+        // They should start with "function" keyword and have name A NAME 
+        function popupalert(x) {
+            alert('This is an alert box.' + x.length);
+
+        };
+
+        // popupalert([5]); // perfectly ok. 
+        // legal to call without passing value to the parameter, but
+        // the function will throw error.
+        //popupalert();
+
+        // Object creation from functions
+        function Car() {
+
+            var price;
+
+            this.display = function () {
+                //alert('Cars price is ' + this.price);
+            }
+
+        };
+
+        var c1 = new Car();
+        c1.price = 1000;
+        c1.display();
+
+        //another way of creating objects using JSON structure
+        var c2 = {
+            price: 1000,
+            color: "blue",
+
+            display2: function d() {
+                document.write('<br>c2 object"s price is ' + this.price);
+                document.write(' c2 object"s color is ' + this.color);
+            }
+        };
+
+        c2.display2();
+
+        c2.price = 100000500;
+        c2.color = "red";
+        c2.display2();
+
+        
+
+
+        var bus1 = new Bus(10500);
+        document.write("<br> bus1 price is " + bus1.price);
+        bus1.display();
+        bus1.setPrice(25000);
+        bus1.display();
+        bus1.applyDiscount(50);
+        bus1.display();
+
+        var bus2 = new Bus(10500, "red");
+        document.write("<br> bus2 price is " + bus2.price +
+            " and color is" + bus2.color);
+
+
+        
+
+        var lBus1 = new LuxuryBus(1800, "orange", true);
+        lBus1.display();
+
+
+
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+
+    <SCRIPT>
+        //popupalert([5000, 400]);
+    </SCRIPT>
+
+</BODY>
+
+</HTML>

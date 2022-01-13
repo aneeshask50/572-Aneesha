@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <script src="my-js-classes.js"></script>
+    <script>
+        var a = 10; // global scope
+        var bus1 = new Bus(1000,"blue"); // global scope       
+
+        function f(){
+            var x =5; // local scope
+            document.write(`<br>Inside f. value of f's local variable x is ${x}`);
+
+            for(let x1=0; x1<5;x1++){                
+                document.write(`<br>Inside f. value of f's block variable x1 is ${x1}`);
+            }
+
+            //document.write(`<br>Inside f. value of f's block variable x1 outside the block is ${x1}`);
+
+        };
+
+        function g(){
+            var y =15; // local scope
+            document.write(`<br>Inside g. value of f's local variable y is ${y}`);
+        };
+
+        document.write(`<br> value of global variable a is ${a}  `);
+        document.write(`<br>value of global variable bus1 is ${bus1.price}`);
+        f();
+        document.write("<br> ******");
+        try{
+        document.write("<br>value of f's local variable x is " + x);
+        document.write("<br>value of g's local variable y is " + y);
+        }catch(e){
+            document.write("<br> inside catch");
+        };
+       
+        f();
+
+
+
+    </script>
+</html>

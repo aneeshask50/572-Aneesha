@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<script src="my-js-classes.js">
+</script>
+
+<p id="myp1">1000</p>
+<p>2000</p>
+
+<div>
+    <p>3000</p>
+    <a href="http://www.oracle.com" id="myA1">this is link to oracle </a>
+</div>
+<button onmouseover="applyBorder();">Click me to change the borders of p tags </button>
+<br> Type some amount to show only items matching the price
+<input type="text" onchange="applyBorder();">
+
+<p>4000</p>
+
+<script>
+    // Accessing HTML elements by thier ID    
+    var x = document.getElementById("myp1");
+    x.innerHTML = "new para";
+
+    var y = document.getElementById("myA1");
+    //alert(y.innerHTML);
+    y.innerHTML = "this is link to IBM";
+
+    // f
+    function applyBorder() {
+        var z = document.getElementsByTagName("p");
+        //alert(`No of p tags in the web page is : ${z.length} `);
+
+        for (elem of z) {
+            //alert(elem.trim());
+            if(elem.innerHTML>2000)
+            elem.style = "border: 3px solid lightblue";
+        };
+    }
+
+    //applyBorder();
+
+
+</script>
+
+</html>
